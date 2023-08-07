@@ -120,7 +120,7 @@ export function ArtDetails() {
                   <p className="px-9 pt-1 text-sm font-gilroy text-muted-foreground">
                     {item.description}
                   </p>
-                  <div className="absolute right-2 top-4 flex gap-2 text-lg font-sans font-bold">
+                  <div className="absolute right-2 top-4 flex gap-2 text-xs sm:text-lg font-sans font-bold">
                     <Image
                       src={SKULL_SMALL}
                       alt="SKULL Logo"
@@ -143,7 +143,7 @@ export function ArtDetails() {
                   <p className="px-9 pt-1 text-sm text-muted-foreground">
                     {item.description}
                   </p>
-                  <div className="absolute right-2 top-4 flex gap-2 text-lg font-sans font-bold">
+                  <div className="absolute right-2 top-4 flex gap-2 text-xs sm:text-lg font-sans font-bold">
                     <Image
                       src={SKULL_SMALL}
                       alt="SKULL Logo"
