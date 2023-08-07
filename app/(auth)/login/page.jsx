@@ -2,7 +2,6 @@ import INTERLACE_LOGO from "@/public/images/interlace-logo.svg";
 import Image from "next/image";
 import LOGO_MAIN from "@/public/images/LOGO_MAIN.png";
 import { Button } from "@/components/ui/button";
-import DISCORD from "@/public/images/icons/discord-icon.svg";
 
 export default function Example() {
   return (

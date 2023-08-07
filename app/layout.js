@@ -57,12 +57,12 @@ export default function RootLayout({ children }) {
           raleway.variable,
           wavesCPC.variable,
           wavesTinyCPC.variable,
-          `h-screen w-screen overflow-y-hidden`
+          `h-screen w-screen overflow-y-hidden relative`
         )}
       >
         <NavigationMenu />
         {children}
-        <div className="hidden h-3 w-full md:block absolute bg-accent bottom-0" />
+        <div className="hidden h-3 w-full md:block fixed bg-accent bottom-0" />
       </body>
     </html>
   );

@@ -35,7 +35,7 @@ export default function NavigationMenu() {
   const [loggedIn, setLoggedIn] = React.useState(false);
 
   return (
-    <nav className="absolute w-full bg-primary">
+    <nav className="w-full bg-primary">
       <div className="absolute h-3 w-full bg-accent z-10" />
       <div className="h-[70px] px-6 pb-3 pt-[22px] relative justify-between flex">
         <div className="flex items-center text-2xl gap-2 font-waves">
