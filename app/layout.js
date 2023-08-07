@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
           wavesCPC.variable,
           wavesTinyCPC.variable,
           gilroy.variable,
-          `lg:h-screen lg:w-screen lg:overflow-y-hidden relative`
+          `lg:h-screen lg:w-screen lg:overflow-y-hidden relative tallXS:h-full tallXS:overflow-y-scroll`
         )}
       >
         {children}
