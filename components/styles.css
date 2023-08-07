@@ -1,0 +1,31 @@
+.swiper {
+  width: 400px;
+  height: 400px;
+  background-color: var(--primary);
+  border-radius: 16px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background-color: var(--primary);
+  border-radius: 16px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  @media (max-width: 500px) {
+    width: 75vw;
+    height: 75vw;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--foreground);
+}

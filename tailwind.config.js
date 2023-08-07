@@ -16,10 +16,17 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        tallXS: { raw: "(max-height: 700px)" },
+        tallXL: { raw: "(min-height: 980px) and (min-width: 1024px)" },
+      },
       fontFamily: {
+        montserrat: ["var(--font-montserrat)"],
+        sans: ["var(--font-sans)"],
         raleway: ["var(--font-raleway)"],
         waves: ["var(--font-waves-cpc)"],
         wavesTiny: ["var(--font-waves-tiny-cpc)"],
+        gilroy: ["var(--font-gilroy)"],
       },
       colors: {
         border: "hsl(var(--border))",

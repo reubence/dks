@@ -3,37 +3,36 @@
 import Image from "next/image";
 
 import * as React from "react";
-import { Check, ChevronsUpDown, Cpu } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import LOGO_MAIN from "@/public/images/LOGO_MAIN.png";
-import AVATAR from "@/public/images/avatar.png";
-import DISCONNECT from "@/public/images/icons/disconnect-icon.svg";
-// import {
-//   Command,
-//   CommandEmpty,
-//   CommandGroup,
-//   CommandInput,
-//   CommandItem,
-// } from "@/components/ui/command";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { buttonVariants } from "./ui/button";
-import { Separator } from "./ui/separator";
-import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import LOGO_MAIN from "@/public/images/LOGO_MAIN.png";
+import AVATAR from "@/public/images/avatar.png";
+import DISCONNECT from "@/public/images/icons/disconnect-icon.svg";
+import HOME from "@/public/images/icons/home-icon.svg";
+import LEADERBOARD from "@/public/images/icons/leaderboard-icon.svg";
+
+import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 function classNames() {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function NavigationMenu() {
-  const [loggedIn, setLoggedIn] = React.useState(false);
-
+export default function NavigationMenu({ isLoggedIn }) {
+  const [active, setActive] = React.useState("dashboard");
   return (
     <nav className="w-full bg-primary">
       <div className="absolute h-3 w-full bg-accent z-10" />
@@ -42,7 +41,7 @@ export default function NavigationMenu() {
           <Image src={LOGO_MAIN} alt="DKS Logo" className="w-8 h-8" />
           <span className="pt-2">DKS</span>
         </div>
-        {loggedIn ? (
+        {isLoggedIn ? (
           <div className="relative flex items-center leading-none gap-2 text-xl font-wavesTiny">
             Alex
             <Popover>
@@ -58,6 +57,85 @@ export default function NavigationMenu() {
                 <span className="pb-2">Disconnect</span>
               </PopoverContent>
             </Popover>
+            <div className="ml-4 lg:hidden">
+              <Sheet>
+                <SheetTrigger>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_105_130)">
+                      <path
+                        d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_105_130">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </SheetTrigger>
+                <SheetContent side="left">
+                  <div className="flex flex-col h-full pt-14">
+                    <Button
+                      variant="ghost"
+                      className={cn(
+                        `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
+                        {
+                          "text-primary-foreground": active === "dashboard",
+                        }
+                      )}
+                    >
+                      <Image
+                        src={HOME}
+                        alt="DKS Logo"
+                        className="w-6 h-6 mr-3"
+                      />
+                      <span className="mb-1.5">Dashboard</span>
+                    </Button>
+
+                    <Button
+                      variant="ghost"
+                      className={cn(
+                        `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
+                        {
+                          "text-primary-foreground": active === "leaderboard",
+                        }
+                      )}
+                    >
+                      <Image
+                        src={LEADERBOARD}
+                        alt="DKS Logo"
+                        className="w-6 h-6 mr-3"
+                      />
+                      <span className="mb-1.5">Leaderboard</span>
+                    </Button>
+
+                    <Button
+                      variant="ghost"
+                      className={cn(
+                        `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
+                        {
+                          "text-primary-foreground": active === "leaderboard",
+                        }
+                      )}
+                    >
+                      <Image
+                        src={DISCONNECT}
+                        alt="DKS Logo"
+                        className="w-6 h-6 mr-3"
+                      />
+                      <span className="mb-1.5">Disconnect</span>
+                    </Button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         ) : null}
       </div>

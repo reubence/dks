@@ -1,8 +1,15 @@
 import NavigationMenu from "@/components/navigation-menu";
 import "./../public/globals.css";
-import { Inter, Montserrat, Raleway } from "next/font/google";
+import { Inter, Montserrat, Raleway, Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
+
+// load open sans font
+const sans = Open_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 const raleway = Raleway({
   subsets: ["latin"],
@@ -26,9 +33,8 @@ const wavesTinyCPC = localFont({
 const gilroy = localFont({
   src: [
     {
-      path: "./../public/fonts/gilroy/Gilroy-UltraLightItalic.ttf",
-      weight: "200",
-      style: "italic",
+      path: "./../public/fonts/gilroy/Gilroy-Regular.ttf",
+      weight: "400",
     },
     {
       path: "./../public/fonts/gilroy/Gilroy-ThinItalic.ttf",
@@ -36,12 +42,18 @@ const gilroy = localFont({
       style: "italic",
     },
     {
-      path: "./../public/fonts/gilroy/Gilroy-SemiBoldItalic.ttf",
+      path: "./../public/fonts/gilroy/Gilroy-SemiBold.ttf",
+      weight: "500",
     },
   ],
+  variable: "--font-gilroy",
 });
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -53,14 +65,15 @@ export default function RootLayout({ children }) {
     <html lang="en" className="h-full">
       <body
         className={cn(
-          montserrat.className,
+          montserrat.variable,
+          sans.variable,
           raleway.variable,
           wavesCPC.variable,
           wavesTinyCPC.variable,
-          `h-screen w-screen overflow-y-hidden relative`
+          gilroy.variable,
+          `lg:h-screen lg:w-screen lg:overflow-y-hidden relative`
         )}
       >
-        <NavigationMenu />
         {children}
         <div className="hidden h-3 w-full md:block fixed bg-accent bottom-0" />
       </body>
