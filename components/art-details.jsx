@@ -93,7 +93,7 @@ export function ArtDetails() {
         </CardDescription>
       </CardHeader>
       <CardContent className="">
-        <div className="flex gap-6">
+        <div className="flex justify-center items-center lg:justify-normal lg:items-start gap-6">
           {stats.map((stat) => (
             <div
               className="flex flex-col items-center gap-2.5 justify-center p-2 border w-28 rounded-lg"

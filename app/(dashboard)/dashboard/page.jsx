@@ -4,13 +4,24 @@ import NFT_1 from "@/public/images/nft-1.png";
 import Image from "next/image";
 import { ArtDetails } from "@/components/art-details";
 import ImageSlider from "@/components/image-slider";
+import LOGO_MAIN from "@/public/images/LOGO_MAIN.png";
 
 export default function Dashboard() {
   return (
-    <div className="py-6 px-8 w-full h-full flex flex-col items-start">
+    <div className="py-6 px-8 w-full h-full flex flex-col max-w-7xl">
       <header>
-        <div className="mx-auto w-full">
-          <h1 className="text-4xl font-waves">Turnt Up Dylan</h1>
+        <div className="mx-auto w-full lg:flex lg:justify-between">
+          <h1 className="text-[28px] text-center lg:text-left lg:text-4xl font-waves w-full mx-auto">
+            Turnt Up Dylan
+          </h1>
+          <div className="hidden lg:flex w-full gap-2 whitespace-nowrap items-center justify-end">
+            Owns 1 DKS NFT
+            <Image src={LOGO_MAIN} alt=" Logo" className="w-8 h-8 mb-2" />
+          </div>
+          <div className="lg:hidden text-lg font-gilroy flex items-center justify-center gap-2 w-full mx-auto mt-2 mb-6">
+            <Image src={LOGO_MAIN} alt=" Logo" className="w-8 h-8" />
+            Owns 1 DKS NFT
+          </div>
         </div>
       </header>
       <main className="w-full max-w-7xl">
