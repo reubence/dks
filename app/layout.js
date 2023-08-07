@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
           raleway.variable,
           wavesCPC.variable,
           wavesTinyCPC.variable,
-          `h-full`
+          `h-screen w-screen overflow-y-hidden`
         )}
       >
         <NavigationMenu />

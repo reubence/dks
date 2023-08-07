@@ -8,7 +8,7 @@ export default function Example() {
   return (
     <>
       <div className="relative flex min-h-screen flex-1 flex-col justify-center py-5 px-4 md:py-12 md:px-8">
-        <div className="mt-10 sm:mx-auto sm:h-full sm:w-full lg:max-w-[828px] min-h-[65vh] lg:min-h-[60vh] bg-primary p-5 shadow rounded-lg sm:px-12 justify-between flex flex-col relative border">
+        <div className="mt-10 sm:mx-auto sm:h-full sm:w-full lg:max-w-[828px] min-h-[70vh] lg:min-h-[60vh] bg-primary p-5 shadow rounded-lg sm:px-12 justify-between flex flex-col relative border">
           <div className="absolute right-4 top-4 md:right-5 md:top-5  font-raleway text-xl md:text-[32px] font-bold">
             <span className="text-accent">02</span>/02
           </div>
