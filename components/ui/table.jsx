@@ -6,7 +6,10 @@ const Table = React.forwardRef(({ className, ...props }, ref) => (
   <div className="w-full overflow-auto">
     <table
       ref={ref}
-      className={cn("w-full caption-bottom text-sm font-gilroy", className)}
+      className={cn(
+        "w-full caption-bottom text-sm font-gilroy border-separate border-primary border-spacing-y-2",
+        className
+      )}
       {...props}
     />
   </div>
@@ -19,11 +22,7 @@ const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
 TableHeader.displayName = "TableHeader";
 
 const TableBody = React.forwardRef(({ className, ...props }, ref) => (
-  <tbody
-    ref={ref}
-    className={cn("[&_tr:last-child]:border-0", className)}
-    {...props}
-  />
+  <tbody ref={ref} className={cn("[&_tr]:border-l-2", className)} {...props} />
 ));
 TableBody.displayName = "TableBody";
 
@@ -40,7 +39,7 @@ const TableRow = React.forwardRef(({ className, ...props }, ref) => (
   <tr
     ref={ref}
     className={cn(
-      "transition-colors bg-muted/50 data-[state=selected]:bg-muted hover:bg-[#40403A] ",
+      "transition-colors  bg-muted/50 data-[state=selected]:bg-muted hover:bg-[#40403A] ",
       className
     )}
     {...props}

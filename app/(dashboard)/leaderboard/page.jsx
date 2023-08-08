@@ -169,9 +169,24 @@ export default function Leaderboard() {
       <main className="md:w-full border rounded-lg bg-primary px-4 lg:px-6">
         <Tabs defaultValue="all" className="mt-9">
           <TabsList className="">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="kings">Kings</TabsTrigger>
-            <TabsTrigger value="nobles">Nobles</TabsTrigger>
+            <TabsTrigger
+              className={cn("font-bold text-xl leading-none")}
+              value="all"
+            >
+              All
+            </TabsTrigger>
+            <TabsTrigger
+              className={cn("font-bold text-xl leading-none")}
+              value="kings"
+            >
+              Kings
+            </TabsTrigger>
+            <TabsTrigger
+              className={cn("font-bold text-xl leading-none")}
+              value="nobles"
+            >
+              Nobles
+            </TabsTrigger>
           </TabsList>
           <TabsContent className="" value="all">
             <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]">
@@ -190,19 +205,22 @@ export default function Leaderboard() {
                   {invoices.map((invoice, i) => (
                     <TableRow
                       key={invoice.rank}
-                      className={cn({
-                        "border-l-4 border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
-                          i == 0,
-                        "border-l-4 border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300]":
-                          i == 1,
-                        "border-l-4 border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800]":
-                          i == 2,
-                      })}
+                      className={cn(
+                        "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg ",
+                        {
+                          "border-l-4 border-l-accent bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
+                            i == 0,
+                          "border-l-4 border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300]":
+                            i == 1,
+                          "border-l-4 border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800]":
+                            i == 2,
+                        }
+                      )}
                     >
                       <TableCell className="font-bold text-center">
                         {invoice.rank}
                       </TableCell>
-                      <TableCell>{invoice.name}</TableCell>
+                      <TableCell>{invoice.name} </TableCell>
                       <TableCell>{invoice.type}</TableCell>
                       <TableCell className="text-right">
                         {invoice.points}
@@ -214,10 +232,10 @@ export default function Leaderboard() {
             </ScrollArea>
           </TabsContent>
           <TabsContent value="kings">
-            <ScrollArea className="lg:h-[30vh] tallXL:h-72 tallXS:h-56 "></ScrollArea>
+            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]"></ScrollArea>
           </TabsContent>
           <TabsContent value="nobles">
-            <ScrollArea className="lg:h-[30vh] tallXL:h-72 tallXS:h-56 "></ScrollArea>
+            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]"></ScrollArea>
           </TabsContent>
         </Tabs>
       </main>
