@@ -201,18 +201,18 @@ export default function Leaderboard() {
                     </TableHead>
                   </TableRow>
                 </TableHeader>
-                <TableBody>
+                <TableBody className="">
                   {invoices.map((invoice, i) => (
                     <TableRow
                       key={invoice.rank}
                       className={cn(
                         "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg ",
                         {
-                          "border-l-4 border-l-accent bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
+                          "border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
                             i == 0,
-                          "border-l-4 border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300]":
+                          "border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300]":
                             i == 1,
-                          "border-l-4 border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800]":
+                          "border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800]":
                             i == 2,
                         }
                       )}

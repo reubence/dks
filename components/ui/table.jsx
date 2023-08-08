@@ -22,7 +22,11 @@ const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
 TableHeader.displayName = "TableHeader";
 
 const TableBody = React.forwardRef(({ className, ...props }, ref) => (
-  <tbody ref={ref} className={cn("[&_tr]:border-l-2", className)} {...props} />
+  <tbody
+    ref={ref}
+    className={cn("[&_tr:first-child]:border-0", className)}
+    {...props}
+  />
 ));
 TableBody.displayName = "TableBody";
 
