@@ -42,8 +42,16 @@ const gilroy = localFont({
       style: "italic",
     },
     {
-      path: "./../public/fonts/gilroy/Gilroy-SemiBold.ttf",
+      path: "./../public/fonts/gilroy/Gilroy-Medium.ttf",
       weight: "500",
+    },
+    {
+      path: "./../public/fonts/gilroy/Gilroy-SemiBold.ttf",
+      weight: "600",
+    },
+    {
+      path: "./../public/fonts/gilroy/Gilroy-Bold.ttf",
+      weight: "700",
     },
   ],
   variable: "--font-gilroy",

@@ -77,13 +77,55 @@ const invoices = [
     points: "3000",
     type: "Noble",
   },
+  {
+    rank: "1",
+    name: "Paid",
+    points: "2500",
+    type: "Noble",
+  },
+  {
+    rank: "2",
+    name: "Pending",
+    points: "1500",
+    type: "King",
+  },
+  {
+    rank: "3",
+    name: "Unpaid",
+    points: "3500",
+    type: "Noble",
+  },
+  {
+    rank: "4",
+    name: "Paid",
+    points: "4500",
+    type: "Noble",
+  },
+  {
+    rank: "5",
+    name: "Paid",
+    points: "5500",
+    type: "King",
+  },
+  {
+    rank: "6",
+    name: "Pending",
+    points: "2000",
+    type: "Noble",
+  },
+  {
+    rank: "7",
+    name: "Unpaid",
+    points: "3000",
+    type: "Noble",
+  },
 ];
 
 export default function Leaderboard() {
   return (
     <div className="flex flex-col gap-5">
       {/* BANNER SECTION */}
-      <section className="w-fit lg:w-full xl:h-32  flex flex-col xl:flex-row justify-between items-center border rounded-lg py-3 px-3.5 xl:px-6 gap-6 overflow-clip relative">
+      <section className="w-full xl:h-32 flex flex-col xl:flex-row justify-between items-center border rounded-lg py-3 px-3.5 xl:px-6 gap-6 overflow-clip relative">
         <Image
           src={BG_BANNER}
           alt="Background Banner"
@@ -124,7 +166,7 @@ export default function Leaderboard() {
         </div>
       </section>
       {/* LEADERBOARD SECTION */}
-      <main className="w-full border rounded-lg bg-primary px-6">
+      <main className="md:w-full border rounded-lg bg-primary px-4 lg:px-6">
         <Tabs defaultValue="all" className="mt-9">
           <TabsList className="">
             <TabsTrigger value="all">All</TabsTrigger>
@@ -132,21 +174,32 @@ export default function Leaderboard() {
             <TabsTrigger value="nobles">Nobles</TabsTrigger>
           </TabsList>
           <TabsContent className="" value="all">
-            <ScrollArea className="lg:h-full tallXL:h-72 tallXS:h-56 ">
+            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]">
               <Table>
-                <TableCaption>A list of your recent invoices.</TableCaption>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="w-[100px]">Rank</TableHead>
+                    <TableHead className="w-1">Rank</TableHead>
                     <TableHead>Name</TableHead>
-                    <TableHead>Type</TableHead>
-                    <TableHead className="text-right">Points</TableHead>
+                    <TableHead className="w-1">Type</TableHead>
+                    <TableHead className="w-1 text-right whitespace-nowrap">
+                      Total Points
+                    </TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {invoices.map((invoice) => (
-                    <TableRow key={invoice.rank}>
-                      <TableCell className="font-bold">
+                  {invoices.map((invoice, i) => (
+                    <TableRow
+                      key={invoice.rank}
+                      className={cn({
+                        "border-l-4 border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
+                          i == 0,
+                        "border-l-4 border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300]":
+                          i == 1,
+                        "border-l-4 border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800]":
+                          i == 2,
+                      })}
+                    >
+                      <TableCell className="font-bold text-center">
                         {invoice.rank}
                       </TableCell>
                       <TableCell>{invoice.name}</TableCell>
