@@ -24,15 +24,29 @@ import DISCONNECT from "@/public/images/icons/disconnect-icon.svg";
 import HOME from "@/public/images/icons/home-icon.svg";
 import LEADERBOARD from "@/public/images/icons/leaderboard-icon.svg";
 
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function classNames() {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function NavigationMenu({ isLoggedIn }) {
-  const [active, setActive] = React.useState("dashboard");
+  const pathname = usePathname();
+  const [active, setActive] = React.useState(
+    pathname === "/dashboard" ? "dashboard" : "leaderboard"
+  );
+
+  React.useEffect(() => {
+    if (pathname === "/dashboard") {
+      setActive("dashboard");
+    } else if (pathname === "/leaderboard") {
+      setActive("leaderboard");
+    }
+  }, [pathname]);
+
   return (
     <nav className="w-full bg-primary">
       <div className="absolute h-3 w-full bg-accent z-10" />
@@ -82,9 +96,10 @@ export default function NavigationMenu({ isLoggedIn }) {
                 </SheetTrigger>
                 <SheetContent side="left">
                   <div className="flex flex-col h-full pt-14">
-                    <Button
-                      variant="ghost"
+                    <Link
+                      href="/dashboard"
                       className={cn(
+                        buttonVariants({ variant: "ghost" }),
                         `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
                         {
                           "text-primary-foreground": active === "dashboard",
@@ -97,11 +112,12 @@ export default function NavigationMenu({ isLoggedIn }) {
                         className="w-6 h-6 mr-3"
                       />
                       <span className="mb-1.5">Dashboard</span>
-                    </Button>
+                    </Link>
 
-                    <Button
-                      variant="ghost"
+                    <Link
+                      href="/leaderboard"
                       className={cn(
+                        buttonVariants({ variant: "ghost" }),
                         `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
                         {
                           "text-primary-foreground": active === "leaderboard",
@@ -114,14 +130,14 @@ export default function NavigationMenu({ isLoggedIn }) {
                         className="w-6 h-6 mr-3"
                       />
                       <span className="mb-1.5">Leaderboard</span>
-                    </Button>
+                    </Link>
 
                     <Button
                       variant="ghost"
                       className={cn(
                         `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
                         {
-                          "text-primary-foreground": active === "leaderboard",
+                          "text-primary-foreground": active === "disconnect",
                         }
                       )}
                     >

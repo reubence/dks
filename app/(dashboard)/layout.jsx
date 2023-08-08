@@ -17,7 +17,6 @@ import { usePathname } from "next/navigation";
 
 const DashboardLayout = ({ children }) => {
   const pathname = usePathname();
-  console.log(pathname);
   const [active, setActive] = React.useState(
     pathname === "/dashboard" ? "dashboard" : "leaderboard"
   );
