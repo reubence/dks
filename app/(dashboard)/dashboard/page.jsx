@@ -8,7 +8,7 @@ import LOGO_MAIN from "@/public/images/LOGO_MAIN.png";
 
 export default function Dashboard() {
   return (
-    <div className="py-6 px-8 w-full h-full flex flex-col">
+    <>
       <header>
         <div className="mx-auto w-full lg:flex lg:justify-between">
           <h1 className="text-[28px] text-center lg:text-left lg:text-4xl font-waves w-full mx-auto">
@@ -38,6 +38,6 @@ export default function Dashboard() {
           <ArtDetails />
         </div>
       </main>
-    </div>
+    </>
   );
 }

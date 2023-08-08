@@ -88,7 +88,7 @@ const DashboardLayout = ({ children }) => {
             </div>
           </div>
         </div>
-        {children}
+        <div className="py-6 px-8 w-full h-full flex flex-col">{children}</div>
       </div>
     </>
   );
