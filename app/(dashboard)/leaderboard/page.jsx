@@ -6,6 +6,9 @@ import NFT_1 from "@/public/images/nft-1.png";
 import NFT_2 from "@/public/images/nft-2.png";
 import NFT_3 from "@/public/images/nft-3.png";
 import NFT_4 from "@/public/images/nft-4.png";
+import DKS_GOLD from "@/public/images/icons/dks-gold.svg";
+import DKS_SILVER from "@/public/images/icons/dks-silver.svg";
+import DKS_BRONZE from "@/public/images/icons/dks-bronze.svg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -220,7 +223,35 @@ export default function Leaderboard() {
                       <TableCell className="font-bold text-center">
                         {invoice.rank}
                       </TableCell>
-                      <TableCell>{invoice.name} </TableCell>
+                      <TableCell className="inline-flex gap-3.5 items-center">
+                        {invoice.name}
+                        {i == 0 && (
+                          <Image
+                            src={DKS_GOLD}
+                            alt="DKS GOLD"
+                            width={20}
+                            height={31}
+                          />
+                        )}
+                        {i == 1 && (
+                          <Image
+                            src={DKS_SILVER}
+                            alt="DKS GOLD"
+                            width={20}
+                            height={31}
+                            unoptimized
+                          />
+                        )}
+
+                        {i == 2 && (
+                          <Image
+                            src={DKS_BRONZE}
+                            alt="DKS GOLD"
+                            width={20}
+                            height={31}
+                          />
+                        )}
+                      </TableCell>
                       <TableCell>{invoice.type}</TableCell>
                       <TableCell className="text-right">
                         {invoice.points}
