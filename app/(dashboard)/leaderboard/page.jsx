@@ -209,7 +209,7 @@ export default function Leaderboard() {
                     <TableRow
                       key={invoice.rank}
                       className={cn(
-                        "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg ",
+                        "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg",
                         {
                           "border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
                             i == 0,
