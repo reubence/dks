@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function Example() {
   return (
     <>
-      <div className="absolute right-4 top-4 md:right-5 md:top-5  font-raleway text-xl md:text-[32px] font-bold">
+      <div className="absolute right-4 top-4 md:right-5 md:top-5 font-raleway text-xl md:text-[32px] font-bold">
         <span className="text-accent">01</span>/02
       </div>
 
