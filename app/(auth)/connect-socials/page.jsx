@@ -6,7 +6,7 @@ import DISCORD from "@/public/images/icons/discord-icon.svg";
 
 export default function Example() {
   return (
-    <>
+    <div className="tallXL:-mt-20 my-10 sm:mx-auto sm:h-full sm:w-full lg:max-w-[828px] min-h-[80vh] lg:min-h-[60vh] tallXS:h-[500px] bg-primary p-5 shadow rounded-lg sm:px-12 justify-between flex flex-col relative border">
       <div className="absolute right-4 top-4 md:right-5 md:top-5  font-raleway text-xl md:text-[32px] font-bold">
         <span className="text-accent">02</span>/02
       </div>
@@ -51,6 +51,6 @@ export default function Example() {
       <div className="relative flex items-center gap-2 justify-center text-muted-foreground">
         Powered by: <Image src={INTERLACE_LOGO} alt="DKS Logo" className="" />
       </div>
-    </>
+    </div>
   );
 }
