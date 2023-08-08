@@ -52,7 +52,12 @@ export default function NavigationMenu({ isLoggedIn }) {
       <div className="absolute h-3 w-full bg-accent z-10" />
       <div className="h-[70px] px-6 pb-3 pt-[22px] relative justify-between flex">
         <div className="flex items-center text-2xl gap-2 font-waves">
-          <Image src={LOGO_MAIN} alt="DKS Logo" className="w-8 h-8" />
+          <Image
+            src={LOGO_MAIN}
+            alt="DKS Logo"
+            className="w-8 h-8"
+            unoptimized
+          />
           <span className="pt-2">DKS</span>
         </div>
         {isLoggedIn ? (
@@ -64,10 +69,16 @@ export default function NavigationMenu({ isLoggedIn }) {
                   src={AVATAR}
                   alt="DKS Logo"
                   className="w-9 h-9 relative"
+                  unoptimized
                 />
               </PopoverTrigger>
               <PopoverContent className="inline-flex items-center">
-                <Image src={DISCONNECT} alt={"Disconnect"} className="mr-2.5" />
+                <Image
+                  src={DISCONNECT}
+                  alt={"Disconnect"}
+                  className="mr-2.5"
+                  unoptimized
+                />
                 <span className="pb-2">Disconnect</span>
               </PopoverContent>
             </Popover>
@@ -110,6 +121,7 @@ export default function NavigationMenu({ isLoggedIn }) {
                         src={HOME}
                         alt="DKS Logo"
                         className="w-6 h-6 mr-3"
+                        unoptimized
                       />
                       <span className="mb-1.5">Dashboard</span>
                     </Link>
@@ -128,6 +140,7 @@ export default function NavigationMenu({ isLoggedIn }) {
                         src={LEADERBOARD}
                         alt="DKS Logo"
                         className="w-6 h-6 mr-3"
+                        unoptimized
                       />
                       <span className="mb-1.5">Leaderboard</span>
                     </Link>
@@ -145,6 +158,7 @@ export default function NavigationMenu({ isLoggedIn }) {
                         src={DISCONNECT}
                         alt="DKS Logo"
                         className="w-6 h-6 mr-3"
+                        unoptimized
                       />
                       <span className="mb-1.5">Disconnect</span>
                     </Button>

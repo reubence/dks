@@ -16,10 +16,20 @@ export default function Dashboard() {
           </h1>
           <div className="hidden lg:flex w-full gap-2 whitespace-nowrap items-center justify-end">
             Owns 1 DKS NFT
-            <Image src={LOGO_MAIN} alt=" Logo" className="w-8 h-8 mb-2" />
+            <Image
+              src={LOGO_MAIN}
+              alt=" Logo"
+              className="w-8 h-8 mb-2"
+              unoptimized
+            />
           </div>
           <div className="lg:hidden text-lg font-gilroy flex items-center justify-center gap-2 w-full mx-auto mt-2 mb-6">
-            <Image src={LOGO_MAIN} alt=" Logo" className="w-8 h-8" />
+            <Image
+              src={LOGO_MAIN}
+              alt=" Logo"
+              className="w-8 h-8"
+              unoptimized
+            />
             Owns 1 DKS NFT
           </div>
         </div>

@@ -145,6 +145,7 @@ export default function Leaderboard() {
               src={SIGIL}
               alt="Skull Logo"
               className="w-9 h-9 xl:w-12 xl:h-12"
+              unoptimized
             />
             <div className="flex flex-col">
               <span className="text-lg xl:text-[22px] font-gilroy font-medium">
@@ -161,9 +162,9 @@ export default function Leaderboard() {
             <Image
               src={item.image}
               alt="nft-1"
-              unoptimized
               className="border rounded-md w-[77px] h-[77px] xl:w-[106px] xl:h-[106px]"
               key={i}
+              unoptimized
             />
           ))}
         </div>
@@ -231,6 +232,7 @@ export default function Leaderboard() {
                             alt="DKS GOLD"
                             width={20}
                             height={31}
+                            unoptimized
                           />
                         )}
                         {i == 1 && (
@@ -249,6 +251,7 @@ export default function Leaderboard() {
                             alt="DKS GOLD"
                             width={20}
                             height={31}
+                            unoptimized
                           />
                         )}
                       </TableCell>

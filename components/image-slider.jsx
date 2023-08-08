@@ -23,19 +23,19 @@ export default function ImageSlider() {
         className="mySwiper text-accent"
       >
         <SwiperSlide>
-          <Image src={NFT_1} alt="Logo" />
+          <Image src={NFT_1} alt="Logo" unoptimized />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <Image src={NFT_1} alt="Logo" />
+          <Image src={NFT_1} alt="Logo" unoptimized />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <Image src={NFT_1} alt="Logo" />
+          <Image src={NFT_1} alt="Logo" unoptimized />
         </SwiperSlide>
         <SwiperSlide>
           {" "}
-          <Image src={NFT_1} alt="Logo" />
+          <Image src={NFT_1} alt="Logo" unoptimized />
         </SwiperSlide>
       </Swiper>
     </>

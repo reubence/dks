@@ -15,6 +15,7 @@ export default function Example() {
           src={LOGO_MAIN}
           alt="DKS Logo"
           className="w-[50px] h-[50px] md:w-20 md:h-20 text-center mx-auto mt-2.5 md:mt-8"
+          unoptimized
         />
         <h2 className="mt-6 md:mt-8 text-center text-[28px] md:text-5xl font-waves">
           Welcome
@@ -42,7 +43,8 @@ export default function Example() {
       </div>
 
       <div className="relative flex items-center gap-2 justify-center text-muted-foreground">
-        Powered by: <Image src={INTERLACE_LOGO} alt="DKS Logo" className="" />
+        Powered by:{" "}
+        <Image src={INTERLACE_LOGO} alt="DKS Logo" className="" unoptimized />
       </div>
     </div>
   );

@@ -99,7 +99,7 @@ export function ArtDetails() {
               className="flex flex-col items-center gap-2.5 justify-center p-2 border w-28 rounded-lg"
               key={stat.value}
             >
-              <Image src={stat.icon} width={47} height={47} />
+              <Image src={stat.icon} width={47} height={47} unoptimized />
               <span className="text-lg font-gilroy">{stat.value}</span>
             </div>
           ))}
@@ -114,7 +114,12 @@ export function ArtDetails() {
               {tasks.map((item, index) => (
                 <div className="py-4 px-2 relative" key={index}>
                   <div className="flex gap-2">
-                    <Image src={item.icon} alt="DKS Logo" className="w-6 h-6" />
+                    <Image
+                      src={item.icon}
+                      alt="DKS Logo"
+                      className="w-6 h-6"
+                      unoptimized
+                    />
                     <h2 className="text-sm font-semibold">{item.value}</h2>
                   </div>
                   <p className="px-9 pt-1 text-sm font-gilroy text-muted-foreground">
@@ -125,6 +130,7 @@ export function ArtDetails() {
                       src={SKULL_SMALL}
                       alt="SKULL Logo"
                       className="mr-2 "
+                      unoptimized
                     />
                     {item.points} points
                   </div>
@@ -137,7 +143,12 @@ export function ArtDetails() {
               {completedTasks.map((item, index) => (
                 <div className="py-4 px-2 relative" key={index}>
                   <div className="flex gap-2">
-                    <Image src={item.icon} alt="DKS Logo" className="w-6 h-6" />
+                    <Image
+                      src={item.icon}
+                      alt="DKS Logo"
+                      className="w-6 h-6"
+                      unoptimized
+                    />
                     <h2 className="text-sm font-semibold">{item.value}</h2>
                   </div>
                   <p className="px-9 pt-1 text-sm text-muted-foreground">
@@ -148,6 +159,7 @@ export function ArtDetails() {
                       src={SKULL_SMALL}
                       alt="SKULL Logo"
                       className="mr-2 "
+                      unoptimized
                     />
                     {item.points} points
                   </div>

@@ -46,7 +46,12 @@ const DashboardLayout = ({ children }) => {
                 }
               )}
             >
-              <Image src={HOME} alt="DKS Logo" className="w-6 h-6 mr-3" />
+              <Image
+                src={HOME}
+                alt="DKS Logo"
+                className="w-6 h-6 mr-3"
+                unoptimized
+              />
               <span className="mb-1.5">Dashboard</span>
             </Link>
 
@@ -65,6 +70,7 @@ const DashboardLayout = ({ children }) => {
                 src={LEADERBOARD}
                 alt="DKS Logo"
                 className="w-6 h-6 mr-3"
+                unoptimized
               />
               <span className="mb-1.5">Leaderboard</span>
             </Link>
@@ -74,11 +80,17 @@ const DashboardLayout = ({ children }) => {
               src={LOGO_MAIN}
               alt="DKS Logo"
               className="w-10 h-10 opacity-50"
+              unoptimized
             />
             <div className="px-6 py-4">
               <p className="flex items-center gap-2 text-muted-foreground/40 font-gilroy text-[10px] whitespace-nowrap">
                 Powered by:
-                <Image src={INTERLACE_LOGO} alt="DKS Logo" className="w-20" />
+                <Image
+                  src={INTERLACE_LOGO}
+                  alt="DKS Logo"
+                  className="w-20"
+                  unoptimized
+                />
               </p>
             </div>
             <div className="flex gap-3">
