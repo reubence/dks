@@ -79,7 +79,9 @@ export default function NavigationMenu({ isLoggedIn }) {
                   className="mr-2.5"
                   unoptimized
                 />
-                <span className="pb-2">Disconnect</span>
+                <Link href={"#"} className="pb-2">
+                  Disconnect
+                </Link>
               </PopoverContent>
             </Popover>
             <div className="ml-4 lg:hidden">
