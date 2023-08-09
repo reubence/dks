@@ -210,7 +210,7 @@ export default function Leaderboard() {
                     <TableRow
                       key={invoice.rank}
                       className={cn(
-                        "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg",
+                        "[&_td:last-child]:rounded-r-md [&_td:first-child]:rounded-l-md",
                         {
                           "border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300] gradient-one":
                             i == 0,
@@ -221,9 +221,15 @@ export default function Leaderboard() {
                         }
                       )}
                     >
-                      <TableCell className="font-bold text-center relative">
+                      <TableCell className="font-bold text-center relative overflow-clip">
                         {i == 0 && (
-                          <div className="absolute left-0 h-full w-2" />
+                          <div className="absolute left-0 top-0 h-full w-1 bg-accent" />
+                        )}
+                        {i == 1 && (
+                          <div className="absolute left-0 top-0 h-full w-1 bg-white" />
+                        )}
+                        {i == 2 && (
+                          <div className="absolute left-0 top-0 h-full w-1 bg-accent/30" />
                         )}
                         {invoice.rank}
                       </TableCell>
