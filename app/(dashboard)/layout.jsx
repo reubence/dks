@@ -94,19 +94,30 @@ const DashboardLayout = ({ children }) => {
               </p>
             </div>
             <div className="flex gap-3">
-              <Image src={WEB} alt="Web Icon" className="w-6 h-6" unoptimized />
-              <Image
-                src={TWITTER}
-                alt="Web Icon"
-                className="w-6 h-6"
-                unoptimized
-              />
-              <Image
-                src={DISCORD}
-                alt="Web Icon"
-                className="w-6 h-6"
-                unoptimized
-              />
+              <Link href="#">
+                <Image
+                  src={WEB}
+                  alt="Web Icon"
+                  className="w-6 h-6"
+                  unoptimized
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src={TWITTER}
+                  alt="Web Icon"
+                  className="w-6 h-6"
+                  unoptimized
+                />
+              </Link>
+              <Link href="#">
+                <Image
+                  src={DISCORD}
+                  alt="Web Icon"
+                  className="w-6 h-6"
+                  unoptimized
+                />
+              </Link>
             </div>
           </div>
         </div>
