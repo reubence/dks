@@ -44,4 +44,31 @@
   body {
     @apply bg-background text-foreground font-montserrat;
   }
+  .gradient-one {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(80%, #cba753),
+      color-stop(0%, #cba753)
+    );
+  }
+  .gradient-two {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(80%, #d4d4d4),
+      color-stop(0%, #d3d3d3)
+    );
+  }
+  .gradient-three {
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(80%, #6d5928),
+      color-stop(0%, #6d5928)
+    );
+  }
 }

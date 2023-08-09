@@ -212,16 +212,19 @@ export default function Leaderboard() {
                       className={cn(
                         "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg",
                         {
-                          "border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300]":
+                          "border-l-[#CBA753] bg-gradient-to-r from-[#CBA75380] to-[#CBA75300] gradient-one":
                             i == 0,
-                          "border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300]":
+                          "border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300] gradient-two":
                             i == 1,
-                          "border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800]":
+                          "border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800] gradient-three":
                             i == 2,
                         }
                       )}
                     >
-                      <TableCell className="font-bold text-center">
+                      <TableCell className="font-bold text-center relative">
+                        {i == 0 && (
+                          <div className="absolute left-0 h-full w-2" />
+                        )}
                         {invoice.rank}
                       </TableCell>
                       <TableCell className="inline-flex gap-3.5 items-center">
