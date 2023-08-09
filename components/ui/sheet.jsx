@@ -59,9 +59,6 @@ const SheetContent = React.forwardRef(
         {...props}
       >
         {children}
-        <nav className="absolute w-full bg-primary z-[999]">
-          <div className="absolute h-3 w-full bg-accent z-[999]" />
-        </nav>
       </SheetPrimitive.Content>
     </SheetPortal>
   )

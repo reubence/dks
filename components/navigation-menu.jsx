@@ -20,6 +20,11 @@ import {
 
 import LOGO_MAIN from "@/public/images/LOGO_MAIN.png";
 import AVATAR from "@/public/images/avatar.png";
+import INTERLACE_LOGO from "@/public/images/interlace-logo.svg";
+import WEB from "@/public/images/icons/web.svg";
+import TWITTER from "@/public/images/icons/twitter-icon.svg";
+import DISCORD from "@/public/images/icons/discord-icon.svg";
+
 import DISCONNECT from "@/public/images/icons/disconnect-icon.svg";
 import HOME from "@/public/images/icons/home-icon.svg";
 import LEADERBOARD from "@/public/images/icons/leaderboard-icon.svg";
@@ -55,7 +60,7 @@ export default function NavigationMenu({ isLoggedIn }) {
   }
 
   return (
-    <nav className="w-full bg-primary z-[999999999]">
+    <nav className="w-full bg-primary">
       <div className="absolute h-3 w-full bg-accent z-10" />
       <div className="h-[70px] px-6 pb-3 pt-[22px] relative justify-between flex">
         <div className="flex items-center text-2xl gap-2 font-waves">
@@ -137,7 +142,7 @@ export default function NavigationMenu({ isLoggedIn }) {
                     </svg>
                   )}
                 </SheetTrigger>
-                <SheetContent side="left">
+                <SheetContent className="h-full flex flex-col" side="left">
                   <div className="flex flex-col h-full pt-7 sm:pt-14">
                     <Link
                       href="/dashboard"
@@ -194,6 +199,51 @@ export default function NavigationMenu({ isLoggedIn }) {
                       />
                       <span className="mb-1.5">Disconnect</span>
                     </Button>
+                  </div>
+                  <div className="flex flex-col h-full w-full items-center justify-end py-28">
+                    <Image
+                      src={LOGO_MAIN}
+                      alt="DKS Logo"
+                      className="w-10 h-10 opacity-50"
+                      unoptimized
+                    />
+                    <div className="px-6 py-4">
+                      <p className="flex items-center gap-2 text-muted-foreground/40 font-gilroy text-[10px] whitespace-nowrap">
+                        Powered by:
+                        <Image
+                          src={INTERLACE_LOGO}
+                          alt="DKS Logo"
+                          className="w-20"
+                          unoptimized
+                        />
+                      </p>
+                    </div>
+                    <div className="flex gap-3">
+                      <Link href="#">
+                        <Image
+                          src={WEB}
+                          alt="Web Icon"
+                          className="w-6 h-6"
+                          unoptimized
+                        />
+                      </Link>
+                      <Link href="#">
+                        <Image
+                          src={TWITTER}
+                          alt="Web Icon"
+                          className="w-6 h-6"
+                          unoptimized
+                        />
+                      </Link>
+                      <Link href="#">
+                        <Image
+                          src={DISCORD}
+                          alt="Web Icon"
+                          className="w-6 h-6"
+                          unoptimized
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
