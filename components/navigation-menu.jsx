@@ -24,6 +24,7 @@ import DISCONNECT from "@/public/images/icons/disconnect-icon.svg";
 import HOME from "@/public/images/icons/home-icon.svg";
 import LEADERBOARD from "@/public/images/icons/leaderboard-icon.svg";
 
+import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { Button, buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -35,10 +36,12 @@ function classNames() {
 
 export default function NavigationMenu({ isLoggedIn }) {
   const pathname = usePathname();
+  const [sheetOpen, setSheetOpen] = React.useState();
   const [active, setActive] = React.useState(
     pathname === "/dashboard" ? "dashboard" : "leaderboard"
   );
 
+  console.log(sheetOpen);
   React.useEffect(() => {
     if (pathname === "/dashboard") {
       setActive("dashboard");
@@ -47,8 +50,12 @@ export default function NavigationMenu({ isLoggedIn }) {
     }
   }, [pathname]);
 
+  if (sheetOpen) {
+    document.body.style.pointerEvents = "auto";
+  }
+
   return (
-    <nav className="w-full bg-primary">
+    <nav className="w-full bg-primary z-[999999999]">
       <div className="absolute h-3 w-full bg-accent z-10" />
       <div className="h-[70px] px-6 pb-3 pt-[22px] relative justify-between flex">
         <div className="flex items-center text-2xl gap-2 font-waves">
@@ -84,31 +91,54 @@ export default function NavigationMenu({ isLoggedIn }) {
                 </Link>
               </PopoverContent>
             </Popover>
-            <div className="ml-4 lg:hidden">
-              <Sheet>
+            <div className="ml-4 lg:hidden relative">
+              <Sheet
+                onOpenChange={() => {
+                  setSheetOpen(!sheetOpen);
+                }}
+              >
                 <SheetTrigger>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clip-path="url(#clip0_105_130)">
+                  {!sheetOpen ? (
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_105_130)">
+                        <path
+                          d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_105_130">
+                          <rect width="24" height="24" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  ) : (
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <path
-                        d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z"
+                        d="M19 17H18V16H17V15H16V14H15V13H14V12H13V11H12V10H11V9H10V8H9V7H8V6H6V8H7V9H8V10H9V11H10V12H11V13H12V14H13V15H14V16H15V17H16V18H17V19H19V17Z"
                         fill="white"
                       />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_105_130">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
+                      <path
+                        d="M6 17H7V16H8V15H9V14H10V13H11V12H12V11H13V10H14V9H15V8H16V7H17V6H19V8H18V9H17V10H16V11H15V12H14V13H13V14H12V15H11V16H10V17H9V18H8V19H6V17Z"
+                        fill="white"
+                      />
+                    </svg>
+                  )}
                 </SheetTrigger>
                 <SheetContent side="left">
-                  <div className="flex flex-col h-full pt-14">
+                  <div className="flex flex-col h-full pt-7 sm:pt-14">
                     <Link
                       href="/dashboard"
                       className={cn(
