@@ -233,7 +233,7 @@ export default function Leaderboard() {
                         )}
                         {invoice.rank}
                       </TableCell>
-                      <TableCell className="inline-flex gap-3.5 items-center">
+                      <TableCell className="inline-flex gap-3.5 items-center whitespace-nowrap">
                         {invoice.name}
                         {i == 0 && (
                           <Image
