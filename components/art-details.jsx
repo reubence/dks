@@ -1,5 +1,6 @@
 "use client";
 import * as React from "react";
+import { motion } from "framer-motion";
 import {
   Card,
   CardContent,
@@ -84,7 +85,15 @@ const tasks = [
     description: "User is awarded for Reacting to the latest annoucement",
   },
 ];
+
+let tabs = [
+  { id: "tasks", label: "All Task (5)" },
+  { id: "completed", label: "Completed" },
+];
+
 export function ArtDetails() {
+  let [activeTab, setActiveTab] = React.useState(tabs[0].id);
+
   return (
     <Card className="relative border-none shadow-none bg-transparent z-10 flex-1">
       <CardHeader className="relative">
@@ -105,12 +114,27 @@ export function ArtDetails() {
             </div>
           ))}
         </div>
-        <Tabs defaultValue="account" className="mt-9">
+        <Tabs defaultValue="tasks" className="mt-9">
           <TabsList className="">
-            <TabsTrigger value="account">All Task (5)</TabsTrigger>
-            <TabsTrigger value="password">Completed</TabsTrigger>
+            {tabs.map((tab) => (
+              <TabsTrigger
+                className="relative"
+                key={tab.id}
+                value={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {activeTab === tab.id && (
+                  <motion.span
+                    layoutId="tasks"
+                    className="absolute bottom-0 w-full h-0.5 z-10 bg-accent mix-blend-difference"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                {tab.label}
+              </TabsTrigger>
+            ))}
           </TabsList>
-          <TabsContent className="" value="account">
+          <TabsContent className="" value="tasks">
             <ScrollArea className="lg:h-[30vh] tallXL:h-72 tallXS:h-56 ">
               {tasks.map((item, index) => (
                 <div className="py-4 px-2 relative" key={index}>
@@ -139,7 +163,7 @@ export function ArtDetails() {
               ))}
             </ScrollArea>
           </TabsContent>
-          <TabsContent value="password">
+          <TabsContent value="completed">
             <ScrollArea className="lg:h-[30vh] tallXL:h-72 tallXS:h-56 ">
               {completedTasks.map((item, index) => (
                 <div className="py-4 px-2 relative" key={index}>

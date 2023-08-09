@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 import SIGIL from "@/public/images/icons/sigil-icon.svg";
@@ -11,6 +13,8 @@ import DKS_SILVER from "@/public/images/icons/dks-silver.svg";
 import DKS_BRONZE from "@/public/images/icons/dks-bronze.svg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
+
 import {
   Table,
   TableBody,
@@ -123,8 +127,14 @@ const invoices = [
     type: "Noble",
   },
 ];
+let tabs = [
+  { id: "all", label: "All" },
+  { id: "kings", label: "Kings" },
+  { id: "nobles", label: "Nobles" },
+];
 
 export default function Leaderboard() {
+  let [activeTab, setActiveTab] = React.useState(tabs[0].id);
   return (
     <div className="flex flex-col gap-5">
       {/* BANNER SECTION */}
@@ -173,24 +183,23 @@ export default function Leaderboard() {
       <main className="md:w-full border rounded-lg bg-primary px-4 lg:px-6">
         <Tabs defaultValue="all" className="mt-9">
           <TabsList className="">
-            <TabsTrigger
-              className={cn("font-bold text-xl leading-none")}
-              value="all"
-            >
-              All
-            </TabsTrigger>
-            <TabsTrigger
-              className={cn("font-bold text-xl leading-none")}
-              value="kings"
-            >
-              Kings
-            </TabsTrigger>
-            <TabsTrigger
-              className={cn("font-bold text-xl leading-none")}
-              value="nobles"
-            >
-              Nobles
-            </TabsTrigger>
+            {tabs.map((tab) => (
+              <TabsTrigger
+                className="relative font-bold text-xl leading-none"
+                key={tab.id}
+                value={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+              >
+                {activeTab === tab.id && (
+                  <motion.span
+                    layoutId="leaderboard"
+                    className="absolute bottom-0 w-full h-0.5 z-10 bg-accent mix-blend-difference"
+                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                  />
+                )}
+                {tab.label}
+              </TabsTrigger>
+            ))}
           </TabsList>
           <TabsContent className="" value="all">
             <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]">
