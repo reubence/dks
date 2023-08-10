@@ -34,7 +34,7 @@ export default function Dashboard() {
           </div>
         </div>
       </header>
-      <main className="w-fit mx-auto lg:w-full">
+      <main className="w-fit mx-auto lg:w-full h-full">
         <div className="flex flex-col lg:flex-row mx-auto w-full border mt-4 bg-primary rounded-2xl">
           <section className="flex flex-col p-5">
             <div className="flex relative w-[75vw] max-w-[400px] mx-auto lg:mr-0">

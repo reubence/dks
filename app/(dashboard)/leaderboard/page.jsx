@@ -202,7 +202,7 @@ export default function Leaderboard() {
             ))}
           </TabsList>
           <TabsContent className="" value="all">
-            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]">
+            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] xl:h-[calc(100vh-370px)]">
               <Table>
                 <TableHeader>
                   <TableRow>
