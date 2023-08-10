@@ -64,13 +64,23 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cba753",endColorstr="#cba753",GradientType=1);
   }
   .gradient-two {
-    background-image: -webkit-linear-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(80%, #d4d4d4),
-      color-stop(0%, #d3d3d3)
+    background: rgb(212, 212, 212);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(212, 212, 212, 0.8) 0%,
+      rgba(211, 211, 211, 1) 100%
     );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(212, 212, 212, 0.8) 0%,
+      rgba(211, 211, 211, 1) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(212, 212, 212, 0.8) 0%,
+      rgba(211, 211, 211, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d4d4d4",endColorstr="#d3d3d3",GradientType=1);
   }
   .gradient-three {
     background-image: -webkit-linear-gradient(

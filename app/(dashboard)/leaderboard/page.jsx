@@ -222,8 +222,7 @@ export default function Leaderboard() {
                         "[&_td:last-child]:rounded-r-lg [&_td:first-child]:rounded-l-lg lg:[&_td:last-child]:rounded-r-md lg:[&_td:first-child]:rounded-l-md",
                         {
                           "border-l-[#CBA753] gradient-one": i == 0,
-                          "border-l-[#D4D4D4] bg-gradient-to-r from-[#D4D4D480] to-[#D3D3D300] gradient-two":
-                            i == 1,
+                          "border-l-[#D4D4D4] gradient-two": i == 1,
                           "border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800] gradient-three":
                             i == 2,
                         }
