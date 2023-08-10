@@ -98,6 +98,7 @@ export default function NavigationMenu({ isLoggedIn }) {
             </Popover>
             <div className="ml-4 lg:hidden relative">
               <Sheet
+                open={sheetOpen}
                 onOpenChange={() => {
                   setSheetOpen(!sheetOpen);
                 }}
@@ -142,7 +143,13 @@ export default function NavigationMenu({ isLoggedIn }) {
                     </svg>
                   )}
                 </SheetTrigger>
-                <SheetContent className="h-full flex flex-col" side="left">
+                <SheetContent
+                  onClick={() => {
+                    setSheetOpen(false);
+                  }}
+                  className="h-full flex flex-col"
+                  side="left"
+                >
                   <div className="flex flex-col h-full pt-7 sm:pt-14">
                     <Link
                       href="/dashboard"
