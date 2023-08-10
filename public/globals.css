@@ -45,13 +45,23 @@
     @apply bg-background text-foreground font-montserrat;
   }
   .gradient-one {
-    background-image: -webkit-linear-gradient(
-      linear,
-      left top,
-      right top,
-      color-stop(80%, #cba753),
-      color-stop(0%, #cba753)
+    background: rgb(203, 167, 83);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(203, 167, 83, 0.8) 0%,
+      rgba(203, 167, 83, 0) 100%
     );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(203, 167, 83, 0.8) 0%,
+      rgba(203, 167, 83, 0) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(203, 167, 83, 0.8) 0%,
+      rgba(203, 167, 83, 0) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cba753",endColorstr="#cba753",GradientType=1);
   }
   .gradient-two {
     background-image: -webkit-linear-gradient(
