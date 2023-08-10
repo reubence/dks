@@ -135,7 +135,7 @@ export function ArtDetails() {
             ))}
           </TabsList>
           <TabsContent className="" value="tasks">
-            <ScrollArea className="lg:h-[30vh] tallXL:h-72 tallXS:h-56 ">
+            <ScrollArea className="lg:h-[24vh] xl:h-[35vh] ">
               {tasks.map((item, index) => (
                 <div className="py-4 px-2 relative" key={index}>
                   <div className="flex gap-2">
