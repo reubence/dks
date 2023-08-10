@@ -7,7 +7,7 @@ const Table = React.forwardRef(({ className, ...props }, ref) => (
     <table
       ref={ref}
       className={cn(
-        "block w-full caption-bottom text-sm font-gilroy border-separate border-primary border-spacing-y-2",
+        "w-full caption-bottom text-sm font-gilroy border-primary border-separate border-spacing-y-2",
         className
       )}
       {...props}
@@ -17,11 +17,7 @@ const Table = React.forwardRef(({ className, ...props }, ref) => (
 Table.displayName = "Table";
 
 const TableHeader = React.forwardRef(({ className, ...props }, ref) => (
-  <thead
-    ref={ref}
-    className={cn("[&_tr]:border-b block w-full", className)}
-    {...props}
-  />
+  <thead ref={ref} className={cn("[&_tr]:border-b", className)} {...props} />
 ));
 TableHeader.displayName = "TableHeader";
 
@@ -47,7 +43,7 @@ const TableRow = React.forwardRef(({ className, ...props }, ref) => (
   <tr
     ref={ref}
     className={cn(
-      "transition-colors  bg-muted/50 data-[state=selected]:bg-muted hover:bg-[#40403A] inline-flex w-full",
+      "transition-colors  bg-muted/50 data-[state=selected]:bg-muted hover:bg-[#40403A] ",
       className
     )}
     {...props}
