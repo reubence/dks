@@ -223,8 +223,7 @@ export default function Leaderboard() {
                         {
                           "border-l-[#CBA753] gradient-one": i == 0,
                           "border-l-[#D4D4D4] gradient-two": i == 1,
-                          "border-l-[#6D5928] bg-gradient-to-r from-[#6D592880] to-[#6D592800] gradient-three":
-                            i == 2,
+                          "border-l-[#6D5928] gradient-three": i == 2,
                         }
                       )}
                     >
