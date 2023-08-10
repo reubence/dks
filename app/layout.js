@@ -83,8 +83,7 @@ export default function RootLayout({ children }) {
         )}
       >
         {children}
-        <div className="hidden h-3 w-full md:block fixed bg-accent bottom-0" />
-        <div className="md:hidden h-3 w-full fixed bg-accent bottom-0" />
+        <div className="h-3 w-full block lg:fixed bg-accent bottom-0 z-50" />
       </body>
     </html>
   );
