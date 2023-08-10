@@ -14,7 +14,6 @@ import DKS_BRONZE from "@/public/images/icons/dks-bronze.svg";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
-
 import {
   Table,
   TableBody,
@@ -127,6 +126,7 @@ const invoices = [
     type: "Noble",
   },
 ];
+
 let tabs = [
   { id: "all", label: "All" },
   { id: "kings", label: "Kings" },
