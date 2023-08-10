@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }) => {
   return (
     <>
       <NavigationMenu isLoggedIn={true} />
-      <div className="w-fit mx-auto lg:w-full h-full flex">
+      <div className="w-full h-full flex">
         <div className="hidden h-full w-72 border-r border-r-border lg:flex lg:flex-col lg:flex-shrink-0 justify-between">
           <div className="flex flex-col h-full pt-14">
             <Link
