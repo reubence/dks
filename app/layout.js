@@ -79,11 +79,10 @@ export default function RootLayout({ children }) {
           wavesCPC.variable,
           wavesTinyCPC.variable,
           gilroy.variable,
-          `lg:h-screen lg:w-screen lg:overflow-y-hidden relative tallXS:h-full tallXS:overflow-y-scroll`
+          `lg:h-screen lg:w-screen lg:overflow-y-hidden relative tallXS:overflow-y-scroll`
         )}
       >
         {children}
-        <div className="h-3 w-full block lg:fixed bg-accent bottom-0 z-50" />
       </body>
     </html>
   );

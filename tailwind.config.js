@@ -17,8 +17,8 @@ module.exports = {
     },
     extend: {
       screens: {
-        tallXS: { raw: "(max-height: 600px)" },
-        tallXL: { raw: "(min-height: 600px) and (min-width: 1024px)" },
+        tallXS: { raw: "(max-height: 750px)" },
+        tallXL: { raw: "(min-height: 750px) and (min-width: 1024px)" },
       },
       fontFamily: {
         montserrat: ["var(--font-montserrat)"],
