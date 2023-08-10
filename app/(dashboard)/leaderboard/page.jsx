@@ -281,10 +281,10 @@ export default function Leaderboard() {
             </ScrollArea>
           </TabsContent>
           <TabsContent value="kings">
-            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]"></ScrollArea>
+            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] xl:h-[calc(100vh-370px)]"></ScrollArea>
           </TabsContent>
           <TabsContent value="nobles">
-            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] lg:h-[calc(100vh-370px)]"></ScrollArea>
+            <ScrollArea className="w-[calc(100vw-60px)] lg:w-full md:h-[calc(100vh-450px)] xl:h-[calc(100vh-370px)]"></ScrollArea>
           </TabsContent>
         </Tabs>
       </main>
