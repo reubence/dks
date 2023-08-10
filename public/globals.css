@@ -45,7 +45,7 @@
     @apply bg-background text-foreground font-montserrat;
   }
   .gradient-one {
-    background-image: -webkit-gradient(
+    background-image: -webkit-linear-gradient(
       linear,
       left top,
       right top,
@@ -54,7 +54,7 @@
     );
   }
   .gradient-two {
-    background-image: -webkit-gradient(
+    background-image: -webkit-linear-gradient(
       linear,
       left top,
       right top,
@@ -63,7 +63,7 @@
     );
   }
   .gradient-three {
-    background-image: -webkit-gradient(
+    background-image: -webkit-linear-gradient(
       linear,
       left top,
       right top,
