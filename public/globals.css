@@ -82,7 +82,7 @@
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d4d4d4",endColorstr="#d3d3d3",GradientType=1);
   }
-  .gradient-three:not(:-webkit-full-screen) {
+  .gradient-three {
     background: rgb(109, 89, 40);
     background: -moz-linear-gradient(
       90deg,
@@ -96,13 +96,5 @@
       rgba(109, 89, 40, 0) 100%
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6d5928",endColorstr="#6d5928",GradientType=1);
-  }
-
-  .gradient-three td:first-child {
-    background: -webkit-linear-gradient(
-      90deg,
-      rgba(109, 89, 40, 1) 0%,
-      rgba(109, 89, 40, 0) 100%
-    );
   }
 }
