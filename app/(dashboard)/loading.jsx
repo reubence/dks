@@ -9,7 +9,7 @@ function Loading() {
       <Image
         src={LOGO_MAIN}
         alt="DKS Logo"
-        className="-mt-20 mb-2.5 w-[7vw] h-[7vw] "
+        className="mt-[40vh] lg:-mt-20 mb-2.5 w-[7vw] h-[7vw] "
       />
       Loading...
     </div>
