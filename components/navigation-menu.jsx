@@ -143,15 +143,12 @@ export default function NavigationMenu({ isLoggedIn }) {
                     </svg>
                   )}
                 </SheetTrigger>
-                <SheetContent
-                  onClick={() => {
-                    setSheetOpen(false);
-                  }}
-                  className="h-full flex flex-col"
-                  side="left"
-                >
+                <SheetContent className="h-full flex flex-col" side="left">
                   <div className="flex flex-col h-full pt-7 sm:pt-14">
                     <Link
+                      onClick={() => {
+                        setSheetOpen(false);
+                      }}
                       href="/dashboard"
                       className={cn(
                         buttonVariants({ variant: "ghost" }),
@@ -171,6 +168,9 @@ export default function NavigationMenu({ isLoggedIn }) {
                     </Link>
 
                     <Link
+                      onClick={() => {
+                        setSheetOpen(false);
+                      }}
                       href="/leaderboard"
                       className={cn(
                         buttonVariants({ variant: "ghost" }),
@@ -190,6 +190,9 @@ export default function NavigationMenu({ isLoggedIn }) {
                     </Link>
 
                     <Button
+                      onClick={() => {
+                        setSheetOpen(false);
+                      }}
                       variant="ghost"
                       className={cn(
                         `justify-normal capitalize my-2 py-2 px-6 !text-3xl font-normal text-primary-foreground/40 font-wavesTiny hover:bg-background/30`,
