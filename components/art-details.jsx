@@ -50,7 +50,7 @@ const completedTasks = [
 const tasks = [
   {
     icon: DISCORD,
-    value: "Discord Reaction",
+    value: "Discord Reaction Discord Reaction Discord Reaction",
     points: 200,
     description: "User is awarded for Reacting to the latest annoucement",
   },
@@ -137,28 +137,30 @@ export function ArtDetails() {
           <TabsContent className="" value="tasks">
             <ScrollArea className="lg:h-[24vh] xl:h-[35vh] ">
               {tasks.map((item, index) => (
-                <div className="py-4 px-2 relative" key={index}>
-                  <div className="flex gap-2">
-                    <Image
-                      src={item.icon}
-                      alt="DKS Logo"
-                      className="w-6 h-6"
-                      unoptimized
-                    />
-                    <h2 className="text-sm font-semibold">{item.value}</h2>
+                <div className="py-4 px-2 relative flex flex-col" key={index}>
+                  <div className="flex justify-between items-start gap-2">
+                    <div className="flex gap-2">
+                      <Image
+                        src={item.icon}
+                        alt="DKS Logo"
+                        className="w-6 h-6"
+                        unoptimized
+                      />
+                      <h2 className="text-sm font-semibold">{item.value}</h2>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 text-xs xl:text-lg font-sans font-bold whitespace-nowrap">
+                      <Image
+                        src={SKULL_SMALL}
+                        alt="SKULL Logo"
+                        className="mr-2 "
+                        unoptimized
+                      />
+                      {item.points} points
+                    </div>
                   </div>
-                  <p className="px-9 pt-1 text-sm font-gilroy text-muted-foreground">
+                  <p className="px-8 text-sm text-muted-foreground">
                     {item.description}
                   </p>
-                  <div className="absolute right-2 top-4 flex items-center justify-center gap-2 text-xs xl:text-lg font-sans font-bold">
-                    <Image
-                      src={SKULL_SMALL}
-                      alt="SKULL Logo"
-                      className="mr-2 "
-                      unoptimized
-                    />
-                    {item.points} points
-                  </div>
                 </div>
               ))}
             </ScrollArea>
@@ -166,28 +168,30 @@ export function ArtDetails() {
           <TabsContent value="completed">
             <ScrollArea className="lg:h-[24vh] xl:h-[35vh] ">
               {completedTasks.map((item, index) => (
-                <div className="py-4 px-2 relative" key={index}>
-                  <div className="flex gap-2">
-                    <Image
-                      src={item.icon}
-                      alt="DKS Logo"
-                      className="w-6 h-6"
-                      unoptimized
-                    />
-                    <h2 className="text-sm font-semibold">{item.value}</h2>
+                <div className="py-4 px-2 relative flex flex-col" key={index}>
+                  <div className="flex justify-between items-start gap-2">
+                    <div className="flex gap-2">
+                      <Image
+                        src={item.icon}
+                        alt="DKS Logo"
+                        className="w-6 h-6"
+                        unoptimized
+                      />
+                      <h2 className="text-sm font-semibold">{item.value}</h2>
+                    </div>
+                    <div className="flex items-center justify-center gap-2 text-xs xl:text-lg font-sans font-bold whitespace-nowrap">
+                      <Image
+                        src={SKULL_SMALL}
+                        alt="SKULL Logo"
+                        className="mr-2 "
+                        unoptimized
+                      />
+                      {item.points} points
+                    </div>
                   </div>
-                  <p className="px-9 pt-1 text-sm text-muted-foreground">
+                  <p className="px-8 text-sm text-muted-foreground">
                     {item.description}
                   </p>
-                  <div className="absolute right-2 top-4 flex items-center justify-center gap-2 text-xs xl:text-lg font-sans font-bold">
-                    <Image
-                      src={SKULL_SMALL}
-                      alt="SKULL Logo"
-                      className="mr-2 "
-                      unoptimized
-                    />
-                    {item.points} points
-                  </div>
                 </div>
               ))}
             </ScrollArea>
