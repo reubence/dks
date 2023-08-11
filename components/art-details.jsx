@@ -139,7 +139,7 @@ export function ArtDetails() {
               {tasks.map((item, index) => (
                 <div className="py-4 px-2 relative flex flex-col" key={index}>
                   <div className="flex justify-between items-start gap-2">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center">
                       <Image
                         src={item.icon}
                         alt="DKS Logo"
@@ -170,7 +170,7 @@ export function ArtDetails() {
               {completedTasks.map((item, index) => (
                 <div className="py-4 px-2 relative flex flex-col" key={index}>
                   <div className="flex justify-between items-start gap-2">
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center">
                       <Image
                         src={item.icon}
                         alt="DKS Logo"
